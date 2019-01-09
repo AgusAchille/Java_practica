@@ -35,5 +35,8 @@ class Capa1 extends JPanel {
 
 		g2D.draw(new Line2D.Double(100, 100, 300, 250));
 
+		
+		setBackground(new Color(41, 45, 62,255));
+		setForeground(new Color(199, 133, 191));
 	}
 }
