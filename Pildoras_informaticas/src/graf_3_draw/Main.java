@@ -1,4 +1,4 @@
-package graf_3_marcos;
+package graf_3_draw;
 
 public class Main {
 	public static void main(String[] args) {
