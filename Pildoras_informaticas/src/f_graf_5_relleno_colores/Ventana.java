@@ -24,6 +24,10 @@ class Capa1 extends JPanel {
 
 		Graphics2D g2D = (Graphics2D) g;
 
+		g2D.setRenderingHint(
+		        RenderingHints.KEY_ANTIALIASING,
+		        RenderingHints.VALUE_ANTIALIAS_ON);
+		
 		Rectangle2D rectangulo = new Rectangle2D.Double(100, 100, 200, 150);
 		
 		g2D.setColor(new Color(50, 133, 191));
@@ -38,7 +42,7 @@ class Capa1 extends JPanel {
 		
 		g2D.fill(circulo);
 
-		g2D.setColor(Color.WHITE);
+		g2D.setColor(Color.BLACK);
 		g2D.draw(new Line2D.Double(100, 100, 300, 250));
 
 		
