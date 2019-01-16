@@ -1,4 +1,4 @@
-package f_graf_imagenes;
+package f_graf_7_imagenes;
 
 import javax.swing.*;
 
@@ -8,6 +8,8 @@ public class Ventana extends JFrame{
 		setBounds(200, 200, 800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Imágenes");
+		
+		add(new Capa_1());
 	}
 		
 }
