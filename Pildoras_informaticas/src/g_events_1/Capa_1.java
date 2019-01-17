@@ -10,12 +10,10 @@ public class Capa_1 extends JPanel implements ActionListener{
 	JButton boton_verde = new JButton("Verde");
 	public JButton boton_rojo = new JButton("Rojo");
 	
-	
 	public Capa_1() {
 		add(boton_azul);
 		add(boton_verde);
 		add(boton_rojo);
-		
 		
 		boton_azul.addActionListener(this);
 		boton_verde.addActionListener(this);
@@ -38,6 +36,4 @@ public class Capa_1 extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 	}
-	
-	
 }
