@@ -8,7 +8,7 @@ public class Capa_1 extends JPanel implements ActionListener{
 	
 	JButton boton_azul = new JButton("Azul");
 	JButton boton_verde = new JButton("Verde");
-	public JButton boton_rojo = new JButton("Rojo");
+	JButton boton_rojo = new JButton("Rojo");
 	
 	public Capa_1() {
 		add(boton_azul);
@@ -30,10 +30,5 @@ public class Capa_1 extends JPanel implements ActionListener{
 		
 		if (e.getSource() == boton_rojo)
 			setBackground(new Color(237, 99, 83));
-	}
-	
-	@Override
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
 	}
 }

@@ -4,9 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-
 public class Capa_1 extends JPanel{
-
 	
 	public Capa_1() {
 		setBackground(new Color(0));
@@ -18,20 +16,22 @@ public class Capa_1 extends JPanel{
 	class Mouse_movimiento implements MouseMotionListener, MouseListener{
 		// Estos valores no son los mismos para todos los eventos
 		// pero para MouseDragged funcionan.
-		int boton_izq = 1024;
-		int boton_der = 4096;
-		int boton_ambos = 5120;
+		// Estos valores son los devueltos por getModifiersEx()
+		final int boton_izq = 1024;
+		final int boton_der = 4096;
+		final int boton_ambos = 5120;
 		
 		int red=0, green=0, blue=0;
+		Color color = new Color(red, green, blue);
+		
+		//Se va a guardar el valor inicial del color al momento de presionar el boton del mouse
 		int red_inicial = 0, green_inicial=0, blue_inicial=0;
 		
-		Color color = new Color(red, green, blue);
-		private int x_inicial=0;
+		private int x_inicial=0;// Guarda la posición del mouse al momento de presionar el botón
 		
 		@Override
 		public void mouseDragged(MouseEvent e) {
-	
-			//System.out.println("x:" + e.getX() + " y:" + e.getY());
+			
 			if(e.getModifiersEx() == boton_izq) {
 				red = (-x_inicial) + e.getX() + red_inicial;
 								
@@ -77,5 +77,4 @@ public class Capa_1 extends JPanel{
 		public void mouseEntered(MouseEvent e) {}
 		public void mouseExited(MouseEvent e) {}
 	}
-	
 }

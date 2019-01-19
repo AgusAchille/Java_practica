@@ -30,37 +30,37 @@ public class Ventana extends JFrame {
 
 	class Ventana_listener implements WindowListener {
 		@Override
-		public void windowActivated(WindowEvent arg0) {
+		public void windowActivated(WindowEvent e) {
 			System.out.println("Ventana " + num_ventana + " activada");
 		}
 
 		@Override
-		public void windowClosed(WindowEvent arg0) {
+		public void windowClosed(WindowEvent e) {
 			System.out.println("La ventana " + num_ventana + " ha sido cerrada");
 		}
 
 		@Override
-		public void windowClosing(WindowEvent arg0) {
+		public void windowClosing(WindowEvent e) {
 			System.out.println("Cerrando la ventana "+ num_ventana);
 		}
 
 		@Override
-		public void windowDeactivated(WindowEvent arg0) {
+		public void windowDeactivated(WindowEvent e) {
 			System.out.println("Ventana " + num_ventana + " desactivada");
 		}
 
 		@Override
-		public void windowDeiconified(WindowEvent arg0) {
+		public void windowDeiconified(WindowEvent e) {
 			System.out.println("Ventana " + num_ventana + " maximizada");
 		}
 
 		@Override
-		public void windowIconified(WindowEvent arg0) {
+		public void windowIconified(WindowEvent e) {
 			System.out.println("Ventana " + num_ventana + " minimizada");
 		}
 
 		@Override
-		public void windowOpened(WindowEvent arg0) {
+		public void windowOpened(WindowEvent e) {
 			System.out.println("Se abrió la ventana "+ num_ventana);
 		}
 	}
