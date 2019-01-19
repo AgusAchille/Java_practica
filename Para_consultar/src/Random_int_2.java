@@ -1,12 +1,12 @@
+import java.util.*;
 
-public class Random_int {
-
+public class Random_int_2 {
+	//ESTA VARIANTE ES MÁS LENTA, COMPROBADO
 	public static void main(String[] args) {
 		int cero = 0, uno = 0, dos = 0, tres = 0, cuatro = 0, cinco = 0;
 
-		for (int i = 0; i < 100000000; i++) {
-			int num = (int) (Math.random()*5); 
-			
+		for (int i = 0; i < 10000000; i++) {
+			int num = new Random().nextInt(5)+1; 
 			switch (num) {
 			case 0:
 				cero++;
