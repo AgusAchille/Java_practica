@@ -32,7 +32,7 @@ class Capa_2 extends JPanel {
 	public Capa_2() {
 		
 		setLayout(new BorderLayout());
-		add ( new JButton("                         CUATRO                           "), BorderLayout.WEST);
+		add ( new JButton("CUATRO"), BorderLayout.WEST);
 		add ( new JButton("CINCO"), BorderLayout.CENTER);
 		add ( new JButton("SEIS"), BorderLayout.EAST);
 	}
