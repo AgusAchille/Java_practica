@@ -18,8 +18,8 @@ public class Capa_principal extends JPanel{
 		private JMenuItem fuente_verdana = new JMenuItem( new StyledEditorKit.FontFamilyAction("Verdana", "Verdana") );
 	
 	private JMenu menu_estilo = new JMenu("Estilo");
-		private JMenuItem estilo_bold = new JMenuItem( new StyledEditorKit.BoldAction());
-		private JMenuItem estilo_italic = new JMenuItem( new StyledEditorKit.ItalicAction() );
+		private JMenuItem estilo_bold = new JMenuItem( new Cambiar_bold("Bold"));
+		private JMenuItem estilo_italic = new JMenuItem( new Cambiar_italica("Italic") );
 	
 	private JMenu menu_tamano = new JMenu("Tamaño");
 		private JMenuItem tamano_12 = new JMenuItem( new StyledEditorKit.FontSizeAction("12", 12));
@@ -60,5 +60,19 @@ public class Capa_principal extends JPanel{
 	}
 	
 	//Eventos
+	
+	class Cambiar_italica extends StyledEditorKit.ItalicAction{
+		public Cambiar_italica(String style) {
+			super();//no es necesario
+			putValue(NAME,style);
+		}
+	}
+	
+	class Cambiar_bold extends StyledEditorKit.BoldAction{
+		public Cambiar_bold(String style) {
+			super();//no es necesario
+			putValue(NAME,style);
+		}
+	}
 	
 }
