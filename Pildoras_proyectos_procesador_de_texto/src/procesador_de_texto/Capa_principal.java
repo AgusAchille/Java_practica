@@ -22,13 +22,13 @@ public class Capa_principal extends JPanel{
 		private JMenuItem estilo_italic = new JMenuItem( new Change_style("Italic", Font.ITALIC) );
 	
 	private JMenu menu_tamano = new JMenu("Tamaño");
-		private JMenuItem tamano_12 = new JMenuItem("12");
-		private JMenuItem tamano_14 = new JMenuItem("14");
-		private JMenuItem tamano_16 = new JMenuItem("16");
-		private JMenuItem tamano_18 = new JMenuItem("18");
+		private JMenuItem tamano_12 = new JMenuItem( new Change_size("12"));
+		private JMenuItem tamano_14 = new JMenuItem( new Change_size("14"));
+		private JMenuItem tamano_16 = new JMenuItem( new Change_size("18"));
+		private JMenuItem tamano_18 = new JMenuItem( new Change_size("20"));
 	
-	private JTextArea pagina = new JTextArea();
-	//////////////////////////////////////////////////////////////////////////////////////
+	private JTextPane pagina = new JTextPane();
+	//--------------------------------------------------------------------------------------------------
 	
 	//Constructor
 	public Capa_principal() {
@@ -38,9 +38,9 @@ public class Capa_principal extends JPanel{
 		
 		pagina.setText("Se que te quiero y que me esperan muchos más aeropuertos");
 		
-		add(pagina, BorderLayout.CENTER);
 		add(capa_menu, BorderLayout.NORTH);	
-	}
+		add(pagina, BorderLayout.CENTER);
+	}//--------------------------------------------------------------------------------------------
 	
 	private void agregar_elementos() {
 		capa_menu.add(barra_principal);
@@ -56,7 +56,7 @@ public class Capa_principal extends JPanel{
 			menu_tamano.add(tamano_14);
 			menu_tamano.add(tamano_16);
 			menu_tamano.add(tamano_18);
-	}/////////////////////////////////////////////////////////////////
+	}
 	
 	//Eventos
 	private class Change_font extends AbstractAction {
@@ -91,5 +91,22 @@ public class Capa_principal extends JPanel{
 			
 			pagina.setFont(new Font(font_name, style^add_style, size));			
 		}	
-	}	
+	}
+	
+	private class Change_size extends AbstractAction {
+		public Change_size(String font_name) {
+			putValue(NAME, font_name);
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			int size = Integer.parseInt(getValue(NAME).toString()) ;
+			Font font = pagina.getFont();
+			String font_name = font.getFamily();
+			int style = font.getStyle();
+			
+			pagina.setFont(new Font(font_name, style, size));			
+		}	
+	}
 }
