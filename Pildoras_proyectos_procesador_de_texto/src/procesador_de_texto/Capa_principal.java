@@ -6,26 +6,26 @@ import java.awt.event.*;
 import javax.swing.event.*;
 
 public class Capa_principal extends JPanel{
-
+	
 	//Variables
 	private JPanel capa_menu = new JPanel();
 	
 	private JMenuBar barra_principal = new JMenuBar();
 	
 	private JMenu menu_fuente = new JMenu("Fuente");
-		private JMenuItem fuente_arial = new JMenuItem( new Change_font("Arial") );
-		private JMenuItem fuente_courier = new JMenuItem( new Change_font("Courier") );
-		private JMenuItem fuente_verdana = new JMenuItem( new Change_font("Verdana") );
+		private JMenuItem fuente_arial = new JMenuItem( new Change_font("Arial", "family") );
+		private JMenuItem fuente_courier = new JMenuItem( new Change_font("Courier", "family") );
+		private JMenuItem fuente_verdana = new JMenuItem( new Change_font("Verdana", "family") );
 	
 	private JMenu menu_estilo = new JMenu("Estilo");
-		private JMenuItem estilo_bold = new JMenuItem( new Change_style("Bold", Font.BOLD) );
-		private JMenuItem estilo_italic = new JMenuItem( new Change_style("Italic", Font.ITALIC) );
+		private JMenuItem estilo_bold = new JMenuItem( new Change_font("Bold", Font.BOLD, "style") );
+		private JMenuItem estilo_italic = new JMenuItem( new Change_font("Italic", Font.ITALIC, "style") );
 	
 	private JMenu menu_tamano = new JMenu("Tamaño");
-		private JMenuItem tamano_12 = new JMenuItem( new Change_size("12"));
-		private JMenuItem tamano_14 = new JMenuItem( new Change_size("14"));
-		private JMenuItem tamano_16 = new JMenuItem( new Change_size("18"));
-		private JMenuItem tamano_18 = new JMenuItem( new Change_size("20"));
+		private JMenuItem tamano_12 = new JMenuItem( new Change_font("12", "size"));
+		private JMenuItem tamano_14 = new JMenuItem( new Change_font("14", "size"));
+		private JMenuItem tamano_16 = new JMenuItem( new Change_font("18", "size"));
+		private JMenuItem tamano_18 = new JMenuItem( new Change_font("20", "size"));
 	
 	private JTextPane pagina = new JTextPane();
 	//--------------------------------------------------------------------------------------------------
@@ -60,26 +60,18 @@ public class Capa_principal extends JPanel{
 	
 	//Eventos
 	private class Change_font extends AbstractAction {
-		public Change_font(String font_name) {
-			putValue(NAME, font_name);
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			Font font = pagina.getFont();
-			int style = font.getStyle();
-			int size = font.getSize();
-			
-			pagina.setFont(new Font(getValue(NAME).toString(), style, size));			
-		}	
-	}
-	
-	private class Change_style extends AbstractAction {
+		String category;
 		int add_style;
 		
-		public Change_style(String style_name, int style) {
-			putValue(NAME, style_name);
+		public Change_font(String font_name, String category) {
+			this.category = category;
+			putValue(NAME, font_name);
+		}
+		
+		public Change_font(String style_name, int style, String category) {
 			add_style = style;
+			this.category = category;
+			putValue(NAME, style_name);
 		}
 		
 		@Override
@@ -89,24 +81,17 @@ public class Capa_principal extends JPanel{
 			int style = font.getStyle();
 			int size = font.getSize();
 			
-			pagina.setFont(new Font(font_name, style^add_style, size));			
-		}	
-	}
-	
-	private class Change_size extends AbstractAction {
-		public Change_size(String font_name) {
-			putValue(NAME, font_name);
-		}
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-			int size = Integer.parseInt(getValue(NAME).toString()) ;
-			Font font = pagina.getFont();
-			String font_name = font.getFamily();
-			int style = font.getStyle();
-			
-			pagina.setFont(new Font(font_name, style, size));			
+			switch(category) {
+				case "family":
+					pagina.setFont(new Font(getValue(NAME).toString(), style, size));		
+					break;
+				case "style":
+					pagina.setFont(new Font(font_name, style^add_style, size));			
+					break;
+				case "size":
+					size = Integer.parseInt(getValue(NAME).toString());
+					pagina.setFont(new Font(font_name, style, size));			
+			}			
 		}	
 	}
 }
