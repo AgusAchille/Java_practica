@@ -88,9 +88,11 @@ public class Capa_principal extends JPanel{
 				case FAMILY:
 					pagina.setFont(new Font(getValue(NAME).toString(), style, size));		
 					break;
+					
 				case STYLE:
 					pagina.setFont(new Font(font_name, style^add_style, size));			
 					break;
+					
 				case SIZE:
 					size = Integer.parseInt(getValue(NAME).toString());
 					pagina.setFont(new Font(font_name, style, size));			
