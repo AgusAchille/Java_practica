@@ -18,16 +18,19 @@ public class Capa_principal extends JPanel{
 		private JMenuItem fuente_verdana = new JMenuItem( new StyledEditorKit.FontFamilyAction("Verdana", "Verdana") );
 	
 	private JMenu menu_estilo = new JMenu("Estilo");
-		private JMenuItem estilo_bold = new JMenuItem( new Cambiar_bold("Bold"));
-		private JMenuItem estilo_italic = new JMenuItem( new Cambiar_italica("Italic") );
+		private JCheckBoxMenuItem estilo_bold = new JCheckBoxMenuItem( new Cambiar_bold("Bold", "assets/bold.png"));
+		private JCheckBoxMenuItem estilo_italic = new JCheckBoxMenuItem( new Cambiar_italica("Italic", "assets/italic.png") );
 	
 	private JMenu menu_tamano = new JMenu("Tamaño");
-		private JMenuItem tamano_12 = new JMenuItem( new StyledEditorKit.FontSizeAction("12", 12));
-		private JMenuItem tamano_14 = new JMenuItem( new StyledEditorKit.FontSizeAction("16", 16));
-		private JMenuItem tamano_16 = new JMenuItem( new StyledEditorKit.FontSizeAction("18", 18));
-		private JMenuItem tamano_18 = new JMenuItem( new StyledEditorKit.FontSizeAction("20", 20));
+		private JRadioButtonMenuItem tamano_12 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("12", 12));
+		private JRadioButtonMenuItem tamano_14 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("14", 14));
+		private JRadioButtonMenuItem tamano_16 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("16", 16));
+		private JRadioButtonMenuItem tamano_20 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("20", 20));
+		ButtonGroup grupo_1 = new ButtonGroup();	
 	
 	private JTextPane pagina = new JTextPane();
+	
+	private JPopupMenu menu_secundario = new JPopupMenu();
 	
 	//--------------------------------------------------------------------------------------------------
 	
@@ -41,9 +44,22 @@ public class Capa_principal extends JPanel{
 		
 		add(capa_menu, BorderLayout.NORTH);	
 		add(pagina, BorderLayout.CENTER);
+		
+		
+		
+		
 	}//--------------------------------------------------------------------------------------------
 	
 	private void agregar_elementos() {
+		menu_secundario.add(new JCheckBoxMenuItem( new Cambiar_bold("Bold", "assets/bold.png")));
+		menu_secundario.add(new JCheckBoxMenuItem( new Cambiar_italica("Italic", "assets/italic.png")));
+		pagina.setComponentPopupMenu(menu_secundario);
+		
+		grupo_1.add(tamano_12);
+		grupo_1.add(tamano_14);
+		grupo_1.add(tamano_16);
+		grupo_1.add(tamano_20);
+		
 		capa_menu.add(barra_principal);
 		barra_principal.add(menu_fuente);
 			menu_fuente.add(fuente_arial);
@@ -56,23 +72,30 @@ public class Capa_principal extends JPanel{
 			menu_tamano.add(tamano_12);
 			menu_tamano.add(tamano_14);
 			menu_tamano.add(tamano_16);
-			menu_tamano.add(tamano_18);
+			menu_tamano.add(tamano_20);
+		
+		//Atajos del teclado
+		estilo_bold.setAccelerator(KeyStroke.getKeyStroke("ctrl B"));
+		estilo_italic.setAccelerator(KeyStroke.getKeyStroke("ctrl I"));
+			
 	}
 	
 	//Eventos
-	
 	class Cambiar_italica extends StyledEditorKit.ItalicAction{
-		public Cambiar_italica(String style) {
+		public Cambiar_italica(String style, String dir) {
 			super();//no es necesario
+			putValue(SMALL_ICON, new ImageIcon(dir));
 			putValue(NAME,style);
+			putValue(SHORT_DESCRIPTION,"Cambiar a itálica");
 		}
 	}
 	
 	class Cambiar_bold extends StyledEditorKit.BoldAction{
-		public Cambiar_bold(String style) {
+		public Cambiar_bold(String style, String dir) {
 			super();//no es necesario
+			putValue(SMALL_ICON, new ImageIcon(dir));
 			putValue(NAME,style);
+			putValue(SHORT_DESCRIPTION,"Cambiar a bold");
 		}
 	}
-	
 }
