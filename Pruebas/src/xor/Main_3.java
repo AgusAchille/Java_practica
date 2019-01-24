@@ -10,26 +10,11 @@ public class Main_3 {
 		// 00010100 => 20 => Rojo y Azuñ
 
 		int num = 0;
-		int entrada;
+		
 
 		while (true) {
-			entrada = new Scanner(System.in).nextInt();
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			num ^= new Scanner(System.in).nextInt();
+				
 			mostrar_color(num);
 		}
 
