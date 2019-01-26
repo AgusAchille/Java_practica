@@ -20,6 +20,7 @@ public class Ventana extends JFrame{
 	//Menus
 	private JMenu menu = new JMenu("colores");	
 	private JMenuBar bar_menu = new JMenuBar();
+	
 	private JToolBar tool_bar = new JToolBar();
 	
 	public Ventana() {
