@@ -18,8 +18,8 @@ public class Capa_principal extends JPanel{
 		private JMenuItem fuente_verdana = new JMenuItem( new StyledEditorKit.FontFamilyAction("Verdana", "Verdana") );
 	
 	private JMenu menu_estilo = new JMenu("Estilo");
-		private JCheckBoxMenuItem estilo_bold = new JCheckBoxMenuItem( new Cambiar_bold("Bold", "assets/bold.png"));
-		private JCheckBoxMenuItem estilo_italic = new JCheckBoxMenuItem( new Cambiar_italica("Italic", "assets/italic.png") );
+		private JCheckBoxMenuItem estilo_bold = new JCheckBoxMenuItem( new Change_bold("Bold", "assets/bold.png"));
+		private JCheckBoxMenuItem estilo_italic = new JCheckBoxMenuItem( new Change_italic("Italic", "assets/italic.png") );
 	
 	private JMenu menu_tamano = new JMenu("Tamaño");
 		private JRadioButtonMenuItem tamano_12 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("12", 12));
@@ -38,6 +38,8 @@ public class Capa_principal extends JPanel{
 	public Capa_principal() {
 		setLayout( new BorderLayout() );
 		
+		JButton hola = new JButton();
+		
 		agregar_elementos();
 		
 		pagina.setText("Se que te quiero y que me esperan muchos más aeropuertos");
@@ -45,14 +47,16 @@ public class Capa_principal extends JPanel{
 		add(capa_menu, BorderLayout.NORTH);	
 		add(pagina, BorderLayout.CENTER);
 		
-		
+		//Atajos del teclado
+		estilo_bold.setAccelerator(KeyStroke.getKeyStroke("ctrl B"));
+		estilo_italic.setAccelerator(KeyStroke.getKeyStroke("ctrl I"));
 		
 		
 	}//--------------------------------------------------------------------------------------------
 	
 	private void agregar_elementos() {
-		menu_secundario.add(new JCheckBoxMenuItem( new Cambiar_bold("Bold", "assets/bold.png")));
-		menu_secundario.add(new JCheckBoxMenuItem( new Cambiar_italica("Italic", "assets/italic.png")));
+		menu_secundario.add(new JCheckBoxMenuItem( new Change_bold("Bold", "assets/bold.png")));
+		menu_secundario.add(new JCheckBoxMenuItem( new Change_italic("Italic", "assets/italic.png")));
 		pagina.setComponentPopupMenu(menu_secundario);
 		
 		grupo_1.add(tamano_12);
@@ -72,17 +76,13 @@ public class Capa_principal extends JPanel{
 			menu_tamano.add(tamano_12);
 			menu_tamano.add(tamano_14);
 			menu_tamano.add(tamano_16);
-			menu_tamano.add(tamano_20);
-		
-		//Atajos del teclado
-		estilo_bold.setAccelerator(KeyStroke.getKeyStroke("ctrl B"));
-		estilo_italic.setAccelerator(KeyStroke.getKeyStroke("ctrl I"));
-			
+			menu_tamano.add(tamano_20);	
 	}
 	
-	//Eventos
-	class Cambiar_italica extends StyledEditorKit.ItalicAction{
-		public Cambiar_italica(String style, String dir) {
+	//////////////////////////////// --- Eventos Internos --- ///////////////////////////////
+	
+	class Change_italic extends StyledEditorKit.ItalicAction{
+		public Change_italic(String style, String dir) {
 			super();//no es necesario
 			putValue(SMALL_ICON, new ImageIcon(dir));
 			putValue(NAME,style);
@@ -90,8 +90,8 @@ public class Capa_principal extends JPanel{
 		}
 	}
 	
-	class Cambiar_bold extends StyledEditorKit.BoldAction{
-		public Cambiar_bold(String style, String dir) {
+	class Change_bold extends StyledEditorKit.BoldAction{
+		public Change_bold(String style, String dir) {
 			super();//no es necesario
 			putValue(SMALL_ICON, new ImageIcon(dir));
 			putValue(NAME,style);
