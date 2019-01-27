@@ -74,7 +74,7 @@ public class Capa_principal extends JPanel{
 		capa_menu.add(barra_principal);
 			barra_principal.add(menu_fuente);
 				menu_fuente.add(fuente_arial);
-				menu_fuente.add(fuente_courier);
+				menu_fuente.add(new StyledEditorKit.FontFamilyAction("Courier", "Courier"));
 				menu_fuente.add(fuente_verdana);
 			barra_principal.add(menu_estilo);
 				menu_estilo.add(estilo_bold);
