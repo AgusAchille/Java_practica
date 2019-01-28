@@ -12,10 +12,10 @@ public class Main_layer extends JPanel{
 	private JButton show_btn = new JButton(new Show_action());
 	
 	private String[] strings_box_1 = {"Message", "Confirm", "Option", "Input"};
-	private String[] strings_box_2 = {"ERROR_MESSAGE", "INFORMATION_MESSAGE", "WARNING_MESSAGE", "QUESTION_MESSAGE", "PLAIN_MESSAGE"};
-	private String[] strings_box_3 = {"String", "Icon", "Component", "Others", "Object[]"};
-	private String[] strings_box_4 = {"DEFAULT_OPTION", "YES_NO_OPTION", "YES_NO_CANCEL_OPTION", "OK_CANCEL_OPTION"};
-	private String[] strings_box_5 = {"String[]", "Icon[]", "Object[]"};
+	private String[] strings_box_2 = {"Error", "Information", "Warning", "Question", "Nothing"};
+	private String[] strings_box_3 = {"String", "Icon", "Component", "Others", "Object Array"};
+	private String[] strings_box_4 = {"Default", "Yes, No", "Yes, No, Cancel", "Yes, Cancel"};
+	private String[] strings_box_5 = {"String Array", "Icon Array", "Object Array"};
 	private String[] strings_box_6 = {"Text Field", "Combo"};
 	
 	private Button_layer box_1 = new Button_layer("Type",  strings_box_1);
@@ -47,19 +47,44 @@ public class Main_layer extends JPanel{
 		layer_1.add(box_6);
 	}
 	
+
+	//----------------------Events-------------------------
 	
 	private class Show_action extends AbstractAction{
+		private Object[] array;
 		private Object object;
+		private int img_type;
+		private int option_type;
 		
 		public Show_action() {
 			putValue(NAME, "Show");
 		}
 		
-				
-		
-		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			
+			switch(box_2.get_selection()) {
+				case "Error":
+					img_type = 0;
+					break;
+					
+				case "Information":
+					img_type = 1;
+					break;
+					
+				case "Warning":
+					img_type = 2;
+					break;
+					
+				case "Question":
+					img_type = 3;
+					break;
+					
+				case "Nothing":
+					img_type = -1;
+					break;
+			}
+			
 			switch(box_3.get_selection()) {
 				case "String":
 					object = message;
@@ -73,7 +98,7 @@ public class Main_layer extends JPanel{
 					object = btn;
 					break;
 					
-				case "Object[]":
+				case "Object Array":
 					object = new Object[] {message, icon, btn, time};
 					break;
 					
@@ -82,33 +107,59 @@ public class Main_layer extends JPanel{
 					break;
 			}
 			
+			switch(box_4.get_selection()) {
+				case "Default":
+					option_type = -1;
+					break;
+					
+				case "Yes, No":
+					option_type = 0;
+					break;
+					
+				case "Yes, No, Cancel":
+					option_type = 1;
+					break;
+					
+				case "Yes, Cancel":
+					option_type = 2;
+				break;
+			}
 			
-			
-			
-			
-			
-			
-			
+			switch(box_5.get_selection()) {
+				case "String Array":
+					array = new Object[]{"Red", "Green", "Blue"};
+					break;
+					
+				case "Icon Array":
+					array = new Object[]{new ImageIcon("assets/theme/red.png"), new ImageIcon("assets/theme/green.png"), new ImageIcon("assets/theme/blue.png")};
+					break;
+					
+				case "Object Array":
+					array = new Object[]{message, icon, btn, time};
+					break;
+			}
 			
 			switch(box_1.get_selection()) {
 				case "Message":
-					JOptionPane.showMessageDialog(null, object, "titulo", 0);
+					JOptionPane.showMessageDialog(null, object, "Message", img_type);
 					break;
 					
 				case "Confirm":
-					JOptionPane.showConfirmDialog(null, object, "titulo", 0, 0);
+					JOptionPane.showConfirmDialog(null, object, "Confirm", option_type, img_type);
 					break;
 					
 				case "Option":
-					JOptionPane.showOptionDialog(null, object, "titulo", 0, 0, null, null, null);
+					JOptionPane.showOptionDialog(null, object, "Option", 1, img_type, null, array, null);
 					break;
 					
 				case "Input":
-					JOptionPane.showInputDialog(null, object, "titulo", 0);
+					if(box_6.get_selection().equals("Combo"))
+						JOptionPane.showInputDialog(null, object, "input", img_type, null, new String[]{"Red", "Green", "Blue"}, "Green");
+					else
+						JOptionPane.showInputDialog(null, object, "Input", img_type);
 					break;
 			}
 		}
-	
 	}
 }
 
