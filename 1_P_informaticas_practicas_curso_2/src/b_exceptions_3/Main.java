@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner input=new Scanner(System.in);
-		System.out.println("¿Qué deseas hacer?");
+		System.out.println("Â¿QuÃ© deseas hacer?");
 		System.out.println("1. Introducir datos");
 		System.out.println("2. Salir del programa");
 				
@@ -33,7 +33,7 @@ public class Main {
 		int edad=entrada.nextInt();		
 		
 		System.out.println("Hola " + nombre_usuario
-				+ ". El año que viene tendrás " + (edad+1) + " años");
+				+ ". El aÃ±o que viene tendras " + (edad+1) + " aÃ±os");
 		
 		entrada.close();
 		

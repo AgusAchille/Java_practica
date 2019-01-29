@@ -15,7 +15,7 @@ public class Main {
 
 		try {
 			for (int i = 0; i < 6; i++) {
-				System.out.println("Posición" + i + "=" + my_array[i]);
+				System.out.println("Posiciï¿½n" + i + "=" + my_array[i]);
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Problemas con el Array");
@@ -30,9 +30,9 @@ public class Main {
 
 		try {
 			int age = Integer.parseInt(JOptionPane.showInputDialog("Introduce your age: "));
-			System.out.println("Hola " + name + " tienes " + age + " años");
+			System.out.println("Hola " + name + " tienes " + age + " aï¿½os");
 		} catch (NumberFormatException e) {
-			System.out.println("Introduce solo números por favor");
+			System.out.println("Introduce solo nï¿½meros por favor");
 		}
 
 	}

@@ -11,10 +11,10 @@ public class Main {
 		try {
 			entrada(edad);
 		} catch (MyException e) {
-			System.out.println("Te caché :D");
+			System.out.println("Te cachï¿½ :D");
 		}
 
-		System.out.println("El programa terminó bien");
+		System.out.println("El programa terminÃ³ bien");
 	}
 
 	public static void entrada(int edad) throws MyException {

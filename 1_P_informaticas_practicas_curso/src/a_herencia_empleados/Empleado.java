@@ -16,19 +16,19 @@ public class Empleado {
 		System.out.println(id); 
 	}
 	
-	public Empleado(String nombre, double sueldo, int dia, int mes, int año) {
+	public Empleado(String nombre, double sueldo, int dia, int mes, int aÃ±o) {
 		id = id_siguiente++; // primero le asigna el valor a id y luego incrementa id_siguiente en 1
 		System.out.println(id);
 		
 		this.nombre = nombre;
 		this.sueldo = sueldo;
-		GregorianCalendar calendar = new GregorianCalendar(año, mes - 1, dia);
+		GregorianCalendar calendar = new GregorianCalendar(aÃ±o, mes - 1, dia);
 		fecha_nacimiento = calendar.getTime();
 	}
 	
-	//Métodos
-	public void setFecha_nacimiento(int dia, int mes, int año) {
-		GregorianCalendar calendar = new GregorianCalendar(año, mes - 1, dia);
+	//Mï¿½todos
+	public void setFecha_nacimiento(int dia, int mes, int aÃ±o) {
+		GregorianCalendar calendar = new GregorianCalendar(aÃ±o, mes - 1, dia);
 		fecha_nacimiento = calendar.getTime();
 	}
 

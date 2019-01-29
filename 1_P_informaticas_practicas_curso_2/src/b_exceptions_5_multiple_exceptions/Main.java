@@ -16,7 +16,7 @@ public class Main {
 		}
 
 
-		System.out.println("El programa terminó bien");
+		System.out.println("El programa terminï¿½ bien");
 	}
 	
 	

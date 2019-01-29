@@ -7,8 +7,8 @@ public class Jefatura extends Empleado {
 		
 	}
 	
-	public Jefatura (String nombre, double sueldo, int año, int mes, int dia) {
-		super(nombre, sueldo, año, mes, dia);
+	public Jefatura (String nombre, double sueldo, int aÃ±o, int mes, int dia) {
+		super(nombre, sueldo, aÃ±o, mes, dia);
 	}
 
 	public double getIncentivo() {

@@ -7,20 +7,20 @@ public class Jefatura extends Empleado implements Jefes{
 	public Jefatura() {	
 	}
 	
-	public Jefatura (String nombre, double sueldo, int dia, int mes, int año) {
-		super(nombre, sueldo, año, mes, dia);
+	public Jefatura (String nombre, double sueldo, int dia, int mes, int aÃ±o) {
+		super(nombre, sueldo, aÃ±o, mes, dia);
 	}
 
-	//Métodos
-		//Método de una interface
+	//Mï¿½todos
+		//Mï¿½todo de una interface
 	public String tomar_decisiones(String decision) {
-		return "Se tomó la siguiente decisión: " + decision;
+		return "Se tomï¿½ la siguiente decisiï¿½n: " + decision;
 		
 	}
-		//Método de una interface heredado de otra interface
+		//Mï¿½todo de una interface heredado de otra interface
 	@Override
 	public void tomarse_vacaciones() {
-		System.out.println("El jefe se tomó vacaciones");;
+		System.out.println("El jefe se tomï¿½ vacaciones");;
 		
 	}
 	
