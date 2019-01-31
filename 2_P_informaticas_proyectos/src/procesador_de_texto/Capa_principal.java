@@ -19,14 +19,14 @@ public class Capa_principal extends JPanel{
 	
 	private JMenu menu_fuente = new JMenu("Fuente");
 		private JMenuItem fuente_arial = new JMenuItem( new StyledEditorKit.FontFamilyAction("Arial", "Arial") );
-		private JMenuItem fuente_courier = new JMenuItem( new StyledEditorKit.FontFamilyAction("Courier", "Courier") );
+		private JMenuItem fuente_courier = new JMenuItem( new StyledEditorKit.FontFamilyAction("Times", "Times") );
 		private JMenuItem fuente_verdana = new JMenuItem( new StyledEditorKit.FontFamilyAction("Verdana", "Verdana") );
 	
 	private JMenu menu_estilo = new JMenu("Estilo");
 		private JCheckBoxMenuItem estilo_bold = new JCheckBoxMenuItem( new Change_bold("Bold", "assets/bold.png"));
 		private JCheckBoxMenuItem estilo_italic = new JCheckBoxMenuItem( new Change_italic("Italic", "assets/italic.png") );
 	
-	private JMenu menu_tamano = new JMenu("Tamaño");
+	private JMenu menu_tamano = new JMenu("Tamaï¿½o");
 		private JRadioButtonMenuItem tamano_12 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("12", 12));
 		private JRadioButtonMenuItem tamano_14 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("14", 14));
 		private JRadioButtonMenuItem tamano_16 = new JRadioButtonMenuItem( new StyledEditorKit.FontSizeAction("16", 16));
@@ -46,7 +46,7 @@ public class Capa_principal extends JPanel{
 		pagina.setBackground(new Color(50,50,50));
 		pagina.setForeground(new Color(210,210,210));
 		
-		pagina.setText("Se que te quiero y que me esperan muchos más aeropuertos");
+		pagina.setText("Se que te quiero y que me esperan muchos mï¿½s aeropuertos");
 		
 		//Layout
 		add(capa_menu, BorderLayout.NORTH);	
@@ -74,7 +74,7 @@ public class Capa_principal extends JPanel{
 		capa_menu.add(barra_principal);
 			barra_principal.add(menu_fuente);
 				menu_fuente.add(fuente_arial);
-				menu_fuente.add(new StyledEditorKit.FontFamilyAction("Courier", "Courier"));
+				menu_fuente.add(fuente_courier);
 				menu_fuente.add(fuente_verdana);
 			barra_principal.add(menu_estilo);
 				menu_estilo.add(estilo_bold);
@@ -125,7 +125,7 @@ public class Capa_principal extends JPanel{
 			super();//no es necesario
 			putValue(SMALL_ICON, new ImageIcon(icon));
 			putValue(NAME,style);
-			putValue(SHORT_DESCRIPTION,"Cambiar a itálica");
+			putValue(SHORT_DESCRIPTION,"Cambiar a itï¿½lica");
 		}
 	}
 	
@@ -143,7 +143,7 @@ public class Capa_principal extends JPanel{
 			super();//no es necesario
 			putValue(SMALL_ICON, new ImageIcon(icon));
 			putValue(NAME,style);
-			putValue(SHORT_DESCRIPTION,"Cambiar a itálica");
+			putValue(SHORT_DESCRIPTION,"Cambiar a itï¿½lica");
 		}
 	}
 }

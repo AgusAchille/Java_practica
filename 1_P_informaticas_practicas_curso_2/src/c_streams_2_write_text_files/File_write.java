@@ -1,4 +1,4 @@
-package c_streams_2_write_files;
+package c_streams_2_write_text_files;
 
 import java.io.FileWriter;
 import java.io.IOException;

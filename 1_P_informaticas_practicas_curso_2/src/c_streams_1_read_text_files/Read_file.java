@@ -1,4 +1,4 @@
-package c_streams_1_read_files;
+package c_streams_1_read_text_files;
 
 import java.io.*;
 

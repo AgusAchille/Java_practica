@@ -1,4 +1,4 @@
-package c_streams_1_read_files;
+package c_streams_1_read_text_files;
 
 public class Main {
     public static void main(String[] args) {
