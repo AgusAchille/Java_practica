@@ -14,7 +14,6 @@ public class Main {
         personal[1] = new Employee("Ana", 2500, 2008, 8, 03);
         personal[2] = new Employee("Luis", 18000, 2012, 9, 24);
 
-        
         //guardar objeto
         try {
             FileOutputStream output = new FileOutputStream("file");
