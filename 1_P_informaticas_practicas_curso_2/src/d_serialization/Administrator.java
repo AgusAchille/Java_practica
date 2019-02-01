@@ -1,4 +1,4 @@
-package d_serialization_1;
+package d_serialization;
 
 public class Administrator extends Employee{
     double incentive=0;

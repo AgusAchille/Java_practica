@@ -1,4 +1,4 @@
-package d_serialization_1;
+package d_serialization;
 
 import java.io.*;
 
