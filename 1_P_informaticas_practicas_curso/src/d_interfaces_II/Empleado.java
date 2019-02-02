@@ -3,6 +3,7 @@ package d_interfaces_II;
 import java.util.*;
 
 public class Empleado {
+	@SuppressWarnings("unused")
 	private String nombre;
 	private double sueldo;
 	private Date fecha_nacimiento;

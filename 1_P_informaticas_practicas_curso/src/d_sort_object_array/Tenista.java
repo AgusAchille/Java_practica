@@ -20,13 +20,10 @@ public class Tenista implements Comparable<Tenista> {
 		int compare = Integer.compare(sueldo, t.sueldo);
 		
 		//Si los sueldos son iguales
-		if (compare == 0) {
+		if (compare == 0)
 			//Compara los nombres
 			return nombre.compareTo(t.nombre);
-		} else {
+		else 
 			return compare;
-		}
-
 	}
-
 }

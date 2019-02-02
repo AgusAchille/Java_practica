@@ -13,8 +13,6 @@ public class Main {
         employee_list.add(new Employee("Juan", 46000, 2010, 9, 05));
         employee_list.add(new Employee("Nancy", 85000, 1992, 2, 01));
 
-
-
         employee_list.set(0, new Employee("Lohana", 9500, 2005,6,15));
 
         for(Employee ele : employee_list){

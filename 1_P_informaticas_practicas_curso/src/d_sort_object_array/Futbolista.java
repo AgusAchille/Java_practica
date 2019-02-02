@@ -1,6 +1,6 @@
 package d_sort_object_array;
 
-public class Futbolista implements Comparable{
+public class Futbolista implements Comparable<Futbolista>{
 	private String nombre;
 	private double sueldo;
 	
@@ -14,12 +14,22 @@ public class Futbolista implements Comparable{
 	}
 
 	@Override
-	public int compareTo(Object o) {		
-		Futbolista f = (Futbolista) o;
-				
+	public int compareTo(Futbolista futbolista) {		
+		
+		return Double.compare(sueldo, futbolista.sueldo);
+		
+		/* Si a Comparable no se le para el parámetro Futbolista
+		 * Entonces el Override del compareTo tiene que tener un argumento Object
+		 * y se vuelve necesario tener que hacer un casting
+
+		Futbolista f = (Futbolista) o;	
 		return Double.compare(sueldo, f.sueldo);
 		
-		/*Implementaci�n manual
+		*/
+		
+		
+		/* Implementación manual
+		 * En caso de no existir algo como el Double.compare
 
 		if (sueldo > f.sueldo)
 			return 1;
