@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Random_int_2 {
-	//ESTA VARIANTE ES M¡S LENTA, COMPROBADO
+	//ESTA VARIANTE ES M√ÅS LENTA, COMPROBADO
 	public static void main(String[] args) {
 		int cero = 0, uno = 0, dos = 0, tres = 0, cuatro = 0, cinco = 0;
 

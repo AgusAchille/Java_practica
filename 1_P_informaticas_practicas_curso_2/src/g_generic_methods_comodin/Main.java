@@ -11,6 +11,7 @@ public class Main {
 		////////////////////////////////////
 		
 		ArrayList<Tenista> array_2 = new ArrayList<Tenista>();
+		
 		prueba(array_2);
 	}
 	
