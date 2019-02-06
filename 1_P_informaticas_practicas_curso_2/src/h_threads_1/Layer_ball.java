@@ -19,13 +19,14 @@ public class Layer_ball extends JPanel{
 	// Añade pelota y la bota 3000 veces
 	public void startGame() {
 		Ball ball = new Ball();
+		Graphics g = getGraphics();
 		arr_list_balls.add(ball);
 		
 		for (int i = 1; i <= 1000; i++) {
 			ball.mueve_pelota(getBounds());
-			paint(getGraphics());
+			paint(g);
 			try {
-				Thread.sleep(25);
+				Thread.sleep(33);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
