@@ -6,7 +6,7 @@ public class Test {
 			j--;
 			if (i / j > 1)
 				i++;
-		} catch (ArrayIndexOutOfBoundsException e) {
+		} catch (ArithmeticException e) {
 			System.out.println(1);
 		} catch (Exception e) {
 			System.out.println(2);
